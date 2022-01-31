@@ -15,5 +15,8 @@
 			"path": "/home/dmtrllv/.minecraft"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"java.configuration.updateBuildConfiguration": "automatic",
+		"java.format.settings.url": "eclipse-format-rules.xml"
+	}
 }

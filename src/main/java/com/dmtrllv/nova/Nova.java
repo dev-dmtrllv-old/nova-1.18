@@ -3,10 +3,13 @@ package com.dmtrllv.nova;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.renderer.BiomeColors;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
+import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -18,7 +21,9 @@ import com.dmtrllv.nova.data.worldgen.features.NovaConfiguredFeatures;
 import com.dmtrllv.nova.data.worldgen.features.NovaFeatures;
 import com.dmtrllv.nova.data.worldgen.placement.NovaPlacements;
 import com.dmtrllv.nova.item.NovaItems;
-// import com.dmtrllv.nova.renderer.NovaSkyRenderHandler;
+import com.dmtrllv.nova.renderer.FakeBakery;
+import com.dmtrllv.nova.renderer.NovaAtlases;
+import com.dmtrllv.nova.tileentity.NovaTileEntityType;
 import com.dmtrllv.nova.world.NovaBiomes;
 import com.dmtrllv.nova.world.events.BloodMoonEvent;
 import com.dmtrllv.nova.world.level.block.NovaBlocks;
@@ -40,17 +45,16 @@ public class Nova
 	
 		NovaBlocks.REGISTRY.register(bus);
 		NovaItems.REGISTRY.register(bus);
+		NovaTileEntityType.REGISTRY.register(bus);
 		NovaBiomes.REGISTRY.register(bus);
 		NovaFeatures.REGISTRY.register(bus);
 
 		bus.addListener(this::onCommonSetup);
 		bus.addListener(this::onClientSetup);
+		bus.addListener(this::onModelRegistryEvent);
 		
 		MinecraftForge.EVENT_BUS.addListener(NovaBiomes::onBiomeLoading);
 		MinecraftForge.EVENT_BUS.addListener(BloodMoonEvent::onTick);
-		// MinecraftForge.EVENT_BUS.addListener(NovaSkyRenderHandler::initialize);
-        // MinecraftForge.EVENT_BUS.addListener(NovaSkyRenderHandler::onFogDensityEvent);
-        // MinecraftForge.EVENT_BUS.addListener(NovaSkyRenderHandler::onFogColorEvent);
 	}
 
 	@OnlyIn(Dist.CLIENT)
@@ -93,5 +97,11 @@ public class Nova
 			NovaBlocks.setCutOutRenderers();
 			NovaBlocks.setSolidRenderers();
 		});
+		BlockEntityRenderers.register(NovaTileEntityType.SIGN.get(), SignRenderer::new);
+	}
+
+	private void onModelRegistryEvent(final ModelRegistryEvent event)
+	{
+		FakeBakery.getBuiltinTextures().add(NovaAtlases.signTexture(NovaWoodType.WHITE_OAK));
 	}
 }

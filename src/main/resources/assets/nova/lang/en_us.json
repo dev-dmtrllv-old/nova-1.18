@@ -1,6 +1,7 @@
 {
 	"itemGroup.nova": "Mod Items",
 	"item.nova.pebble": "A pebble",
+	"block.nova.pebble": "A pebble",
 	"item.nova.white_oak_log": "White oak log",
 	"block.nova.white_oak_log": "White oak log",
 	"item.nova.white_oak_wood": "White oak wood log",
@@ -35,5 +36,7 @@
 	"block.nova.white_oak_sign": "White oak sign",
 	"item.nova.white_oak_sign": "White oak sign",
 	"block.nova.white_oak_boat": "White oak boat",
-	"item.nova.white_oak_boat": "White oak boat"
+	"item.nova.white_oak_boat": "White oak boat",
+	"block.nova.pebble_tool": "Pebble tool",
+	"item.nova.pebble_tool": "Pebble tool"
 }

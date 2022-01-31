@@ -110,5 +110,5 @@ public class NovaBlocks
 	public static final RegistryObject<Block> WHITE_OAK_WALL_SIGN = REGISTRY.register("white_oak_wall_sign", () -> new NovaWallSignBlock(BlockBehaviour.Properties.of(Material.WOOD).noCollission().strength(1.0F).sound(SoundType.WOOD).lootFrom(() -> WHITE_OAK_SIGN.get()), NovaWoodType.WHITE_OAK));
 	public static final RegistryObject<Block> WHITE_OAK_SAPLING = REGISTRY.register("white_oak_sapling", () -> new SaplingBlock(new WhiteOakTreeGrower(), BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)));
 	public static final RegistryObject<Block> WHITE_OAK_LEAVES = REGISTRY.register("white_oak_leaves", () -> leaves());
-	public static final RegistryObject<Block> PEBBLE = REGISTRY.register("pebble", () -> new PebbleBlock(BlockBehaviour.Properties.of(Material.EGG).noCollission().strength(0.5F).sound(SoundType.METAL).noOcclusion()));
+	public static final RegistryObject<Block> PEBBLE = REGISTRY.register("pebble", () -> new PebbleBlock(BlockBehaviour.Properties.of(Material.STONE).strength(0.5F).sound(SoundType.STONE).noOcclusion()));
 }
