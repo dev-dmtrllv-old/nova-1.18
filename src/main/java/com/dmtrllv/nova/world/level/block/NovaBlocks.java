@@ -11,10 +11,12 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.LeavesBlock;
+import net.minecraft.world.level.block.OreBlock;
 import net.minecraft.world.level.block.PressurePlateBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SaplingBlock;
@@ -106,9 +108,12 @@ public class NovaBlocks
 	public static final RegistryObject<Block> WHITE_OAK_PRESSURE_PLATE = REGISTRY.register("white_oak_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.of(Material.WOOD, WHITE_OAK_PLANKS.get().defaultMaterialColor()).noCollission().strength(0.5F).sound(SoundType.WOOD)));
 	public static final RegistryObject<Block> WHITE_OAK_FENCE = REGISTRY.register("white_oak_fence", () -> new FenceBlock(BlockBehaviour.Properties.of(Material.WOOD, WHITE_OAK_PLANKS.get().defaultMaterialColor()).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
 	public static final RegistryObject<Block> WHITE_OAK_FENCE_GATE = REGISTRY.register("white_oak_fence_gate", () -> new FenceGateBlock(BlockBehaviour.Properties.of(Material.WOOD, WHITE_OAK_PLANKS.get().defaultMaterialColor()).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
-	public static final RegistryObject<Block> WHITE_OAK_SIGN = REGISTRY.register("white_oak_sign", () -> new NovaStandingSignBlock(BlockBehaviour.Properties.of(Material.WOOD).noCollission().strength(1.0F).sound(SoundType.WOOD), NovaWoodType.WHITE_OAK));
-	public static final RegistryObject<Block> WHITE_OAK_WALL_SIGN = REGISTRY.register("white_oak_wall_sign", () -> new NovaWallSignBlock(BlockBehaviour.Properties.of(Material.WOOD).noCollission().strength(1.0F).sound(SoundType.WOOD).lootFrom(() -> WHITE_OAK_SIGN.get()), NovaWoodType.WHITE_OAK));
+
+	// public static final RegistryObject<Block> WHITE_OAK_SIGN = REGISTRY.register("white_oak_sign", () -> new NovaStandingSignBlock(BlockBehaviour.Properties.of(Material.WOOD).noCollission().strength(1.0F).sound(SoundType.WOOD), NovaWoodType.WHITE_OAK));
+	// public static final RegistryObject<Block> WHITE_OAK_WALL_SIGN = REGISTRY.register("white_oak_wall_sign", () -> new NovaWallSignBlock(BlockBehaviour.Properties.of(Material.WOOD).noCollission().strength(1.0F).sound(SoundType.WOOD).lootFrom(() -> WHITE_OAK_SIGN.get()), NovaWoodType.WHITE_OAK));
+	
 	public static final RegistryObject<Block> WHITE_OAK_SAPLING = REGISTRY.register("white_oak_sapling", () -> new SaplingBlock(new WhiteOakTreeGrower(), BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)));
 	public static final RegistryObject<Block> WHITE_OAK_LEAVES = REGISTRY.register("white_oak_leaves", () -> leaves());
 	public static final RegistryObject<Block> PEBBLE = REGISTRY.register("pebble", () -> new PebbleBlock(BlockBehaviour.Properties.of(Material.STONE).strength(0.5F).sound(SoundType.STONE).noOcclusion()));
+	public static final RegistryObject<Block> MOON_STONE_ORE = REGISTRY.register("moon_stone_ore", () -> new OreBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
 }

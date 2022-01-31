@@ -9,7 +9,6 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.DiggerItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.SignItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -55,9 +54,12 @@ public class NovaItems
 	public static final RegistryObject<Item> WHITE_OAK_PRESSURE_PLATE = register("white_oak_pressure_plate", NovaBlocks.WHITE_OAK_PRESSURE_PLATE);
 	public static final RegistryObject<Item> WHITE_OAK_FENCE = register("white_oak_fence", NovaBlocks.WHITE_OAK_FENCE);
 	public static final RegistryObject<Item> WHITE_OAK_FENCE_GATE = register("white_oak_fence_gate", NovaBlocks.WHITE_OAK_FENCE_GATE);
-	public static final RegistryObject<Item> WHITE_OAK_SIGN = register("white_oak_sign", () -> new SignItem((new Item.Properties()).stacksTo(16).tab(NovaItemGroup.NOVA_MOD_ITEMS), NovaBlocks.WHITE_OAK_SIGN.get(), NovaBlocks.WHITE_OAK_WALL_SIGN.get()));
+	
+	// public static final RegistryObject<Item> WHITE_OAK_SIGN = register("white_oak_sign", () -> new SignItem((new Item.Properties()).stacksTo(16).tab(NovaItemGroup.NOVA_MOD_ITEMS), NovaBlocks.WHITE_OAK_SIGN.get(), NovaBlocks.WHITE_OAK_WALL_SIGN.get()));
 
 	public static final RegistryObject<Item> WHITE_OAK_SAPLING = register("white_oak_sapling", NovaBlocks.WHITE_OAK_SAPLING);
 	public static final RegistryObject<Item> WHITE_OAK_LEAVES = register("white_oak_leaves", NovaBlocks.WHITE_OAK_LEAVES);
 	public static final RegistryObject<Item> PEBBLE_TOOL = register("pebble_tool", () -> new DiggerItem(0.8F, -2.8F,  NovaItemTier.PEBBLE, NovaBlockTags.PEBBLE_MINABLE, new Item.Properties().tab(NovaItemGroup.NOVA_MOD_ITEMS)));
+	public static final RegistryObject<Item> MOON_STONE_ORE = register("moon_stone_ore", NovaBlocks.MOON_STONE_ORE);
+	public static final RegistryObject<Item> MOON_STONE = register("moon_stone", NovaBlocks.MOON_STONE_ORE);
 }

@@ -3,6 +3,7 @@ package com.dmtrllv.nova.world.level.block;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.minecraft.client.renderer.Sheets;
 import net.minecraft.world.level.block.state.properties.WoodType;
 
 public final class NovaWoodType
@@ -20,6 +21,6 @@ public final class NovaWoodType
 
 	public static void registerWoodTypes()
 	{
-		// woodTypes.forEach((woodType) -> Atlases.addWoodType(woodType)); // ???
+		woodTypes.forEach((woodType) -> Sheets.addWoodType(woodType));
 	}
 }

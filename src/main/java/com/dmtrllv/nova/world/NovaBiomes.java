@@ -82,10 +82,15 @@ public final class NovaBiomes
 			biome.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION).add(() -> NovaPlacements.PEBBLE_PATCH.get());
 			LOGGER.info("Added pebbles to " + biome.getName().toString() + "!");
 		}
+
 		if(biome.getName().compareTo(Biomes.SUNFLOWER_PLAINS.getRegistryName()) == 0)
 		{
 			biome.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION).removeIf((x) -> x.get().getFeatures().anyMatch(f -> (boolean)(f.feature.getRegistryName().compareTo(VegetationFeatures.TREES_PLAINS.feature.getRegistryName()) == 0)));
 			biome.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION).add(() -> NovaPlacements.WHITE_OAK_PLAINS.get());
+		}
+		else if(biome.getCategory() == Biome.BiomeCategory.MOUNTAIN)
+		{
+			biome.getGeneration().getFeatures(GenerationStep.Decoration.UNDERGROUND_ORES).add(() -> NovaPlacements.ORE_MOON_STONE_RARE.get());
 		}
 		// if (biome.getCategory() == Biome.BiomeCategory.PLAINS)
 		// {

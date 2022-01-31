@@ -13,4 +13,5 @@ public class NovaFeatures
 	public static final DeferredRegister<Feature<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.FEATURES, Nova.MOD_ID);
 
 	public static final RegistryObject<Feature<CountConfiguration>> PEBBLE_PATCH = REGISTRY.register("pebble_patch", () -> new PebblePatchFeature(CountConfiguration.CODEC));
+	
 }

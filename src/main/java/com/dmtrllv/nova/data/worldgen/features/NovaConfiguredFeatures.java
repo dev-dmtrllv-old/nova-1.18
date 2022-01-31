@@ -8,6 +8,7 @@ import com.dmtrllv.nova.util.NovaRegistryObject;
 import com.dmtrllv.nova.world.level.block.NovaBlocks;
 
 import net.minecraft.data.BuiltinRegistries;
+import net.minecraft.data.worldgen.features.OreFeatures;
 import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.block.Block;
@@ -16,6 +17,7 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.WeightedPlacedFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.CountConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
@@ -28,7 +30,7 @@ import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlac
 import net.minecraftforge.registries.RegistryObject;
 
 public final class NovaConfiguredFeatures
-{
+{	
 	public static final NovaRegistry<ConfiguredFeature<?, ?>> REGISTRY = new NovaRegistry<>(BuiltinRegistries.CONFIGURED_FEATURE);
 
 	public static final NovaRegistryObject<ConfiguredFeature<?, ?>> PEBBLES_PATCH = REGISTRY.register("pebble_patch", () -> NovaFeatures.PEBBLE_PATCH.get().configured(new CountConfiguration(20)));
@@ -46,6 +48,8 @@ public final class NovaConfiguredFeatures
 	public static final NovaRegistryObject<ConfiguredFeature<?, ?>> FANCY_WHITE_OAK_BEES_005 = REGISTRY.register("fancy_white_oak_bees_005", () -> Feature.TREE.configured(createFancyWhiteOak().decorators(List.of(BEEHIVE_005)).build()));
 
 	public static final NovaRegistryObject<ConfiguredFeature<?, ?>> WHITE_OAK_TREES_PLAINS = REGISTRY.register("trees_plains", () -> Feature.RANDOM_SELECTOR.configured(new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(WHITE_OAK_BEES_005.get().placed(), 0.16F), new WeightedPlacedFeature(FANCY_WHITE_OAK_BEES_005.get().placed(), 0.16F), new WeightedPlacedFeature(TreeFeatures.FANCY_OAK_BEES_005.placed(), 0.33333334F)), TreeFeatures.OAK_BEES_005.placed())));
+
+	public static final NovaRegistryObject<ConfiguredFeature<?, ?>> ORE_MOON_STORE_RARE = REGISTRY.register("ore_moon_stone_rare", () -> Feature.ORE.configured(new OreConfiguration(List.of(OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, NovaBlocks.MOON_STONE_ORE.get().defaultBlockState())), 10)));
 
 	private static TreeConfiguration.TreeConfigurationBuilder createWhiteOak()
 	{

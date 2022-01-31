@@ -3,8 +3,6 @@ package com.dmtrllv.nova;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.renderer.BiomeColors;
-import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
-import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraftforge.api.distmarker.Dist;
@@ -23,7 +21,7 @@ import com.dmtrllv.nova.data.worldgen.placement.NovaPlacements;
 import com.dmtrllv.nova.item.NovaItems;
 import com.dmtrllv.nova.renderer.FakeBakery;
 import com.dmtrllv.nova.renderer.NovaAtlases;
-import com.dmtrllv.nova.tileentity.NovaTileEntityType;
+import com.dmtrllv.nova.world.level.block.entity.NovaBlockEntityType;
 import com.dmtrllv.nova.world.NovaBiomes;
 import com.dmtrllv.nova.world.events.BloodMoonEvent;
 import com.dmtrllv.nova.world.level.block.NovaBlocks;
@@ -45,7 +43,7 @@ public class Nova
 	
 		NovaBlocks.REGISTRY.register(bus);
 		NovaItems.REGISTRY.register(bus);
-		NovaTileEntityType.REGISTRY.register(bus);
+		NovaBlockEntityType.REGISTRY.register(bus);
 		NovaBiomes.REGISTRY.register(bus);
 		NovaFeatures.REGISTRY.register(bus);
 
@@ -92,12 +90,14 @@ public class Nova
 		event.enqueueWork(() ->
 		{
 			initColors();
-
-			NovaWoodType.registerWoodTypes();
+			
 			NovaBlocks.setCutOutRenderers();
 			NovaBlocks.setSolidRenderers();
+			
+			// BlockEntityRenderers.register(NovaBlockEntityType.SIGN.get(), SignRenderer::new);
 		});
-		BlockEntityRenderers.register(NovaTileEntityType.SIGN.get(), SignRenderer::new);
+		
+		NovaWoodType.registerWoodTypes();
 	}
 
 	private void onModelRegistryEvent(final ModelRegistryEvent event)
