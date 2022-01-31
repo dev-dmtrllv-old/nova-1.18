@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "nova:block/white_oak_log",
+    "side": "nova:block/white_oak_log"
+  }
+}

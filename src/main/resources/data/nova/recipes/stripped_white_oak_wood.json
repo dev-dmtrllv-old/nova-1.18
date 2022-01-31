@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"group": "bark",
+	"pattern": [
+		"##",
+		"##"
+	],
+	"key": {
+		"#": {
+			"item": "nova:stripped_white_oak_log"
+		}
+	},
+	"result": {
+		"item": "nova:stripped_white_oak_wood",
+		"count": 3
+	}
+}

@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "/home/dmtrllv/.minecraft/versions/1.18.1"
+		},
+		{
+			"name": "server",
+			"path": "/home/dmtrllv/mc-server-test"
+		},
+		{
+			"name": "client",
+			"path": "/home/dmtrllv/.minecraft"
+		}
+	],
+	"settings": {}
+}

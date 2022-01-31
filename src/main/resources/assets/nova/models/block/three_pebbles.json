@@ -1,0 +1,7 @@
+{
+	"parent": "nova:block/three_pebbles_template",
+	"textures": {
+		"all": "minecraft:block/stone",
+		"particle": "minecraft:block/stone"
+	}
+}

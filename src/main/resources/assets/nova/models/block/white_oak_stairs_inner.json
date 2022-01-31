@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "nova:block/white_oak_planks",
+    "top": "nova:block/white_oak_planks",
+    "side": "nova:block/white_oak_planks"
+  }
+}

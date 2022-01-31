@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "nova:block/white_oak_slab"
+    },
+    "type=double": {
+      "model": "nova:block/white_oak_planks"
+    },
+    "type=top": {
+      "model": "nova:block/white_oak_slab_top"
+    }
+  }
+}

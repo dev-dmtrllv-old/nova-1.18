@@ -1,0 +1,65 @@
+{
+	"credit": "Made with Blockbench",
+	"elements": [
+		{
+			"from": [11, 0, 7],
+			"to": [13, 1, 9],
+			"faces": {
+				"north": {"uv": [0, 0, 2, 1], "texture": "#all"},
+				"east": {"uv": [0, 0, 2, 1], "texture": "#all"},
+				"south": {"uv": [0, 0, 2, 1], "texture": "#all"},
+				"west": {"uv": [0, 0, 2, 1], "texture": "#all"},
+				"up": {"uv": [0, 0, 2, 2], "texture": "#all"},
+				"down": {"uv": [0, 0, 2, 2], "texture": "#all"}
+			}
+		},
+		{
+			"from": [4, 0, 3],
+			"to": [6, 1, 5],
+				"faces": {
+				"north": {"uv": [0, 0, 2, 1], "texture": "#all"},
+				"east": {"uv": [0, 0, 2, 1], "texture": "#all"},
+				"south": {"uv": [0, 0, 2, 1], "texture": "#all"},
+				"west": {"uv": [0, 0, 2, 1], "texture": "#all"},
+				"up": {"uv": [0, 0, 2, 2], "texture": "#all"},
+				"down": {"uv": [0, 0, 2, 2], "texture": "#all"}
+			}
+		},
+		{
+			"from": [5, 0, 10],
+			"to": [7, 1, 12],
+			"faces": {
+				"north": {"uv": [0, 0, 2, 1], "texture": "#all"},
+				"east": {"uv": [0, 0, 2, 1], "texture": "#all"},
+				"south": {"uv": [0, 0, 2, 1], "texture": "#all"},
+				"west": {"uv": [0, 0, 2, 1], "texture": "#all"},
+				"up": {"uv": [0, 0, 2, 2], "texture": "#all"},
+				"down": {"uv": [0, 0, 2, 2], "texture": "#all"}
+			}
+		},
+		{
+			"from": [4, 0, 5],
+			"to": [5, 1, 6],
+			"faces": {
+				"north": {"uv": [0, 0, 1, 1], "texture": "#all"},
+				"east": {"uv": [0, 0, 1, 1], "texture": "#all"},
+				"south": {"uv": [0, 0, 1, 1], "texture": "#all"},
+				"west": {"uv": [0, 0, 1, 1], "texture": "#all"},
+				"up": {"uv": [0, 0, 1, 1], "texture": "#all"},
+				"down": {"uv": [0, 0, 1, 1], "texture": "#all"}
+			}
+		},
+		{
+			"from": [6, 1, 11],
+			"to": [7, 2, 12],
+			"faces": {
+				"north": {"uv": [0, 0, 1, 1], "texture": "#all"},
+				"east": {"uv": [0, 0, 1, 1], "texture": "#all"},
+				"south": {"uv": [0, 0, 1, 1], "texture": "#all"},
+				"west": {"uv": [0, 0, 1, 1], "texture": "#all"},
+				"up": {"uv": [0, 0, 1, 1], "texture": "#all"},
+				"down": {"uv": [0, 0, 1, 1], "texture": "#all"}
+			}
+		}
+	]
+}
