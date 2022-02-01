@@ -9,6 +9,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.DiggerItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -24,14 +25,20 @@ public class NovaItems
 		return REGISTRY.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(group)));
 	}
 
-	private static RegistryObject<Item> register(String name, Supplier<? extends Item> sup)
+
+	private static RegistryObject<Item> register(String name)
 	{
-		return register(name, sup, NovaItemGroup.NOVA_MOD_ITEMS);
+		return register(name, () -> new Item(new Item.Properties().tab(NovaItemGroup.NOVA_MOD_ITEMS)));
 	}
 
-	private static RegistryObject<Item> register(String name, Supplier<? extends Item> sup, CreativeModeTab group)
+	// private static RegistryObject<Item> register(String name, CreativeModeTab tab)
+	// {
+	// 	return register(name, () -> new Item(new Item.Properties().tab(tab)));
+	// }
+
+	private static RegistryObject<Item> register(String name, Supplier<? extends Item> sup)
 	{
-		return REGISTRY.register(name, sup);
+		return REGISTRY.register(name, () -> sup.get());
 	}
 
 	private static RegistryObject<Item> register(String name, RegistryObject<Block> block)
@@ -61,5 +68,5 @@ public class NovaItems
 	public static final RegistryObject<Item> WHITE_OAK_LEAVES = register("white_oak_leaves", NovaBlocks.WHITE_OAK_LEAVES);
 	public static final RegistryObject<Item> PEBBLE_TOOL = register("pebble_tool", () -> new DiggerItem(0.8F, -2.8F,  NovaItemTier.PEBBLE, NovaBlockTags.PEBBLE_MINABLE, new Item.Properties().tab(NovaItemGroup.NOVA_MOD_ITEMS)));
 	public static final RegistryObject<Item> MOON_STONE_ORE = register("moon_stone_ore", NovaBlocks.MOON_STONE_ORE);
-	public static final RegistryObject<Item> MOON_STONE = register("moon_stone", NovaBlocks.MOON_STONE_ORE);
+	public static final RegistryObject<Item> MOON_STONE = register("moon_stone");
 }

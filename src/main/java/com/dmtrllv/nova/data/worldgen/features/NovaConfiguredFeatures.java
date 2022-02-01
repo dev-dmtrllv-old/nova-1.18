@@ -49,7 +49,7 @@ public final class NovaConfiguredFeatures
 
 	public static final NovaRegistryObject<ConfiguredFeature<?, ?>> WHITE_OAK_TREES_PLAINS = REGISTRY.register("trees_plains", () -> Feature.RANDOM_SELECTOR.configured(new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(WHITE_OAK_BEES_005.get().placed(), 0.16F), new WeightedPlacedFeature(FANCY_WHITE_OAK_BEES_005.get().placed(), 0.16F), new WeightedPlacedFeature(TreeFeatures.FANCY_OAK_BEES_005.placed(), 0.33333334F)), TreeFeatures.OAK_BEES_005.placed())));
 
-	public static final NovaRegistryObject<ConfiguredFeature<?, ?>> ORE_MOON_STORE_RARE = REGISTRY.register("ore_moon_stone_rare", () -> Feature.ORE.configured(new OreConfiguration(List.of(OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, NovaBlocks.MOON_STONE_ORE.get().defaultBlockState())), 10)));
+	public static final NovaRegistryObject<ConfiguredFeature<?, ?>> ORE_MOON_STORE_RARE = REGISTRY.register("ore_moon_stone_rare", () -> Feature.ORE.configured(new OreConfiguration(List.of(OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, NovaBlocks.MOON_STONE_ORE.get().defaultBlockState())), 6)));
 
 	private static TreeConfiguration.TreeConfigurationBuilder createWhiteOak()
 	{

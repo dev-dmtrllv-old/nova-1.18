@@ -1,0 +1,33 @@
+{
+	"parent": "minecraft:recipes/root",
+	"rewards": {
+		"recipes": [
+			"nova:pebble_tool"
+		]
+	},
+	"criteria": {
+		"has_diamond": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": [
+							"nova:pebble"
+						]
+					}
+				]
+			}
+		},
+		"has_the_recipe": {
+			"trigger": "minecraft:recipe_unlocked",
+			"conditions": {
+				"recipe": "nova:pebble_tool"
+			}
+		}
+	},
+	"requirements": [
+		[
+			"has_the_recipe"
+		]
+	]
+}

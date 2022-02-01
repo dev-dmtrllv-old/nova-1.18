@@ -15,6 +15,7 @@ import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.placement.BiomeFilter;
 import net.minecraft.world.level.levelgen.placement.BlockPredicateFilter;
+import net.minecraft.world.level.levelgen.placement.CountPlacement;
 import net.minecraft.world.level.levelgen.placement.HeightRangePlacement;
 import net.minecraft.world.level.levelgen.placement.InSquarePlacement;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
@@ -33,18 +34,19 @@ public final class NovaPlacements
 
 	public static final NovaRegistryObject<PlacedFeature> PEBBLE_PATCH = register("pebble_patch", () -> NovaConfiguredFeatures.PEBBLES_PATCH.get().placed(RarityFilter.onAverageOnceEvery(16), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
 	public static final NovaRegistryObject<PlacedFeature> WHITE_OAK_PLAINS = register("white_oak_plains", () -> NovaConfiguredFeatures.WHITE_OAK_TREES_PLAINS.get().placed(PlacementUtils.countExtra(0, 0.05F, 1), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(NovaBlocks.WHITE_OAK_SAPLING.get().defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome()));
-	public static final NovaRegistryObject<PlacedFeature> ORE_MOON_STONE_RARE = register("ore_moon_stone_rare", () -> NovaConfiguredFeatures.ORE_MOON_STORE_RARE.get().placed(rareOrePlacement(9, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.absolute(0)))));
+	public static final NovaRegistryObject<PlacedFeature> ORE_MOON_STONE_RARE = register("ore_moon_stone_rare", () -> NovaConfiguredFeatures.ORE_MOON_STORE_RARE.get().placed(commonOrePlacement(100, HeightRangePlacement.triangle(VerticalAnchor.absolute(32), VerticalAnchor.absolute(480)))));
 
 	private static List<PlacementModifier> orePlacement(PlacementModifier a, PlacementModifier b)
 	{
 		return List.of(a, InSquarePlacement.spread(), b, BiomeFilter.biome());
 	}
 
-	// private static List<PlacementModifier> commonOrePlacement(int count, PlacementModifier placementModifier)
-	// {
-		// return orePlacement(CountPlacement.of(count), placementModifier);
-	// }
+	private static List<PlacementModifier> commonOrePlacement(int countPlacement, PlacementModifier placementModifier)
+	{
+		return orePlacement(CountPlacement.of(countPlacement), placementModifier);
+	}
 
+	@SuppressWarnings("unused")
 	private static List<PlacementModifier> rareOrePlacement(int count, PlacementModifier placementModifier)
 	{
 		return orePlacement(RarityFilter.onAverageOnceEvery(count), placementModifier);

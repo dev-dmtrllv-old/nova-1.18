@@ -39,7 +39,7 @@ public final class BloodMoonEvent
 		}
 		return redIn;
 	}
-	
+
 	public static void onTick(WorldTickEvent event)
 	{
 		if (event.world.dimension() == Level.OVERWORLD && event.phase == Phase.START)
@@ -47,18 +47,19 @@ public final class BloodMoonEvent
 			boolean active = isActive;
 
 			long worldTime = event.world.dayTime();
-	
+
 			double d = Math.floor(worldTime / 24000);
 			timeInDay = worldTime % 24000;
-	
+
 			if (d % BLOOD_MOON_DAYS_PER_CYCLE == 0)
 				active = timeInDay >= NIGHT_START_TICK && timeInDay <= NIGHT_END_TICK;
 			else
 				active = false;
-	
+
 			isActive = active;
 
 			// check WanderingTraderSpawner
 		}
 	}
+
 }

@@ -88,14 +88,8 @@ public final class NovaBiomes
 			biome.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION).removeIf((x) -> x.get().getFeatures().anyMatch(f -> (boolean)(f.feature.getRegistryName().compareTo(VegetationFeatures.TREES_PLAINS.feature.getRegistryName()) == 0)));
 			biome.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION).add(() -> NovaPlacements.WHITE_OAK_PLAINS.get());
 		}
-		else if(biome.getCategory() == Biome.BiomeCategory.MOUNTAIN)
-		{
-			biome.getGeneration().getFeatures(GenerationStep.Decoration.UNDERGROUND_ORES).add(() -> NovaPlacements.ORE_MOON_STONE_RARE.get());
-		}
-		// if (biome.getCategory() == Biome.BiomeCategory.PLAINS)
-		// {
-		// 	LogManager.getLogger().info("Changed " + biome.getName().toString() + " biome!");
-		// }
+			
+		biome.getGeneration().getFeatures(GenerationStep.Decoration.UNDERGROUND_ORES).add(() -> NovaPlacements.ORE_MOON_STONE_RARE.get());
 	}
 
 	public static final void registerBiomes()

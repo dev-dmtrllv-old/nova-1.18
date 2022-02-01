@@ -21,7 +21,6 @@ import com.dmtrllv.nova.data.worldgen.placement.NovaPlacements;
 import com.dmtrllv.nova.item.NovaItems;
 import com.dmtrllv.nova.renderer.FakeBakery;
 import com.dmtrllv.nova.renderer.NovaAtlases;
-import com.dmtrllv.nova.world.level.block.entity.NovaBlockEntityType;
 import com.dmtrllv.nova.world.NovaBiomes;
 import com.dmtrllv.nova.world.events.BloodMoonEvent;
 import com.dmtrllv.nova.world.level.block.NovaBlocks;
@@ -43,7 +42,6 @@ public class Nova
 	
 		NovaBlocks.REGISTRY.register(bus);
 		NovaItems.REGISTRY.register(bus);
-		NovaBlockEntityType.REGISTRY.register(bus);
 		NovaBiomes.REGISTRY.register(bus);
 		NovaFeatures.REGISTRY.register(bus);
 
