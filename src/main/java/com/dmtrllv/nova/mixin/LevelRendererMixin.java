@@ -89,7 +89,7 @@ public class LevelRendererMixin
 		}
 		else if (this.minecraft.level.effects().skyType() == DimensionSpecialEffects.SkyType.NORMAL)
 		{
-			boolean isBloodMoonActive = BloodMoonEvent.isBloodMoonActive();
+			boolean isBloodMoonActive = BloodMoonEvent.isActive(level.dayTime());
 
 			RenderSystem.disableTexture();
 			Vec3 vec3 = this.level.getSkyColor(this.minecraft.gameRenderer.getMainCamera().getPosition(), partialTicks);

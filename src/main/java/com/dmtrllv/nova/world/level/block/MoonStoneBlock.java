@@ -28,25 +28,38 @@ public class MoonStoneBlock extends NovaLightBlock
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext ctx)
 	{
-		return updateBlockState(defaultBlockState());
+		return updateBlockState(defaultBlockState(), BloodMoonEvent.isActive(ctx.getLevel().dayTime()));
 	}
 
 	@Override
 	public int getExpDrop(BlockState state, net.minecraft.world.level.LevelReader world, BlockPos pos, int fortune, int silktouch)
 	{
-		return silktouch == 0 ? 1 + RANDOM.nextInt(5) : 0;
+		return state.getValue(LIT) ? (silktouch == 0 ? 3 + RANDOM.nextInt(5) : 0) : 0;
 	}
 
 	@Override
 	public void animateTick(BlockState state, Level level, BlockPos pos, Random random)
 	{
-		level.setBlock(pos, updateBlockState(state), 3);
+		updateBlock(level, pos, state, false);
 	}
 
-	private BlockState updateBlockState(BlockState state)
+	private BlockState updateBlockState(BlockState state, boolean isActive)
 	{
-		boolean isActive = BloodMoonEvent.isBloodMoonActive();
 		return state.setValue(LIT, isActive).setValue(LEVEL, isActive ? this.lightLevel : 0);
+	}
+
+	private void updateBlock(ServerLevel level, BlockPos pos, BlockState state, boolean scheduleTick)
+	{
+		level.setBlock(pos, updateBlockState(state, BloodMoonEvent.isActive(level.dayTime())), 3);
+		if (scheduleTick)
+			level.scheduleTick(new BlockPos(pos), this, 30);
+	}
+
+	private void updateBlock(Level level, BlockPos pos, BlockState state, boolean scheduleTick)
+	{
+		level.setBlock(pos, updateBlockState(state, BloodMoonEvent.isActive(level.dayTime())), 3);
+		if (scheduleTick)
+			level.scheduleTick(new BlockPos(pos), this, 30);
 	}
 
 	@Override
@@ -58,24 +71,22 @@ public class MoonStoneBlock extends NovaLightBlock
 	@Override
 	public void randomTick(BlockState state, ServerLevel level, BlockPos pos, Random random)
 	{
-		tick(state, level, pos, random);
+		updateBlock(level, pos, state, false);
 	}
 
 	@Override
 	public void tick(BlockState state, ServerLevel level, BlockPos pos, Random random)
 	{
-		level.scheduleTick(new BlockPos(pos), this, 30);
-		level.setBlock(pos, updateBlockState(state), 3);
+		updateBlock(level, pos, state, true);
 	}
 
 	@Override
 	@SuppressWarnings("deprecation")
 	public void onPlace(BlockState state, Level level, BlockPos pos, BlockState state2, boolean b)
 	{
-		if (!level.isClientSide() && !state.is(state2.getBlock()))
-		{
-			level.scheduleTick(new BlockPos(pos), state.getBlock(), 1);
-		}
+		if (!state.is(state2.getBlock()))
+			level.scheduleTick(new BlockPos(pos), this, 30);
+
 		super.onPlace(state, level, pos, state2, b);
 	}
 }

@@ -5,7 +5,7 @@ import com.dmtrllv.nova.Nova;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import net.minecraft.client.renderer.Sheets;
+// import net.minecraft.client.renderer.Sheets;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.TextureStitchEvent;
@@ -20,9 +20,9 @@ public class NovaSignTextureStich
 
 	public static void onStitchEvent(final TextureStitchEvent.Pre event)
 	{
-		ResourceLocation stitching = event.getAtlas().location();
+		// ResourceLocation stitching = event.getAtlas().location();
 
-		if (stitching.equals(Sheets.SIGN_SHEET))
-			event.addSprite(WHITE_OAK);
+		// if (stitching.equals(Sheets.SIGN_SHEET))
+		// 	event.addSprite(WHITE_OAK);
 	}
 }
