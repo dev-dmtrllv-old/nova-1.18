@@ -22,10 +22,10 @@
 	"block.nova.white_oak_trapdoor": "White oak trapdoor",
 	"item.nova.white_oak_leaves": "White oak leaves",
 	"block.nova.white_oak_leaves": "White oak leaves",
-	"item.nova.stripped_white_oak_log": "Stripped White oak log",
-	"block.nova.stripped_white_oak_log": "Stripped White oak log",
-	"item.nova.stripped_white_oak_wood": "Stripped White oak wood log",
-	"block.nova.stripped_white_oak_wood": "Stripped White oak wood log",
+	"item.nova.stripped_white_oak_log": "Stripped white oak log",
+	"block.nova.stripped_white_oak_log": "Stripped white oak log",
+	"item.nova.stripped_white_oak_wood": "Stripped white oak wood log",
+	"block.nova.stripped_white_oak_wood": "Stripped white oak wood log",
 	"item.nova.white_oak_pressure_plate": "White oak pressure plate",
 	"block.nova.white_oak_pressure_plate": "White oak pressure plate",
 	"item.nova.white_oak_fence": "White oak fence",
@@ -35,5 +35,10 @@
 	"block.nova.white_oak_boat": "White oak boat",
 	"item.nova.white_oak_boat": "White oak boat",
 	"block.nova.pebble_tool": "Pebble tool",
-	"item.nova.pebble_tool": "Pebble tool"
+	"item.nova.pebble_tool": "Pebble tool",
+	"block.nova.moon_stone": "Moon stone",
+	"item.nova.moon_stone": "Moon stone",
+	"block.nova.moon_stone_ore": "Moon stone ore",
+	"item.nova.moon_stone_ore": "Moon stone ore",
+	"itemGroup.nova_mod_items": "Modded items"
 }

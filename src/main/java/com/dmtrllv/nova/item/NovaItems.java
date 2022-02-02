@@ -9,7 +9,6 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.DiggerItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -30,11 +29,6 @@ public class NovaItems
 	{
 		return register(name, () -> new Item(new Item.Properties().tab(NovaItemGroup.NOVA_MOD_ITEMS)));
 	}
-
-	// private static RegistryObject<Item> register(String name, CreativeModeTab tab)
-	// {
-	// 	return register(name, () -> new Item(new Item.Properties().tab(tab)));
-	// }
 
 	private static RegistryObject<Item> register(String name, Supplier<? extends Item> sup)
 	{

@@ -7,8 +7,8 @@ import net.minecraftforge.event.TickEvent.WorldTickEvent;
 public final class BloodMoonEvent
 {
 	private static final double BLOOD_MOON_DAYS_PER_CYCLE = 31;
-	private static final double NIGHT_START_TICK = 12500;
-	private static final double NIGHT_END_TICK = 24000;
+	private static final double NIGHT_START_TICK = 12575;
+	private static final double NIGHT_END_TICK = 22550;
 	private static final float NIGHT_TIDE = (float) (NIGHT_END_TICK - NIGHT_START_TICK) / 8;
 	private static final float MAX_RED_ADDITIVE = 0.15F;
 	private static final float SLOPE_RED = MAX_RED_ADDITIVE / NIGHT_TIDE;

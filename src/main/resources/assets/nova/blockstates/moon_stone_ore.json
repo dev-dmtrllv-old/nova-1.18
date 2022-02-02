@@ -1,6 +1,9 @@
 {
 	"variants": {
-		"": {
+		"lit=false": {
+			"model": "minecraft:block/stone"
+		},
+		"lit=true": {
 			"model": "nova:block/moon_stone_ore"
 		}
 	}

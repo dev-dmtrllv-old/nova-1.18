@@ -23,6 +23,14 @@
 											}
 										]
 									}
+								},
+								{
+									"condition": "minecraft:time_check",
+									"value": {
+										"min": 12575,
+										"max": 22550
+									},
+									"period": 744000
 								}
 							],
 							"name": "nova:moon_stone_ore"
@@ -39,7 +47,45 @@
 									"function": "minecraft:explosion_decay"
 								}
 							],
+							"conditions": [
+								{
+									"condition": "minecraft:time_check",
+									"value": {
+										"min": 12575,
+										"max": 22550
+									},
+									"period": 744000
+								}
+							],
 							"name": "nova:moon_stone"
+						},
+						{
+							"type": "minecraft:item",
+							"conditions": [
+								{
+									"condition": "minecraft:match_tool",
+									"predicate": {
+										"enchantments": [
+											{
+												"enchantment": "minecraft:silk_touch",
+												"levels": {
+													"min": 1
+												}
+											}
+										]
+									}
+								}
+							],
+							"name": "minecraft:stone"
+						},
+						{
+							"type": "minecraft:item",
+							"conditions": [
+								{
+									"condition": "minecraft:survives_explosion"
+								}
+							],
+							"name": "minecraft:cobblestone"
 						}
 					]
 				}
